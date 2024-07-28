@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raspored rada doktora</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class='centrirano'>Raspored rada doktora</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Doktor</th>
+                <th>Specijalnost</th>
+                <th>Prva smena</th>
+                <th>Druga smena</th>
+                <th>Treća smena</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doktor in doktori %}
+            <tr>
+                <td>{{ doktor.doktor }} </td>
+                <td>{{ doktor.specijalnost }} </td>
+                <td>{% if doktor.raspored['prva'] %}Radi{% else %}-{% endif %}</td>
+                <td>{% if doktor.raspored['druga'] %}Radi{% else %}-{% endif %}</td>
+                <td>{% if doktor.raspored['treca'] %}Radi{% else %}-{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class='centrirano'>
+        <h1>Raspored rada</h1>
+        <form method="post" action="rute.php">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Doktor</th>
+                        <th>Prva smena</th>
+                        <th>Druga smena</th>
+                        <th>Treća smena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for doktor in doktori %}
+                    <tr>
+                        <td>{{ doktor.ime }} {{ doktor.prezime }}</td>
+                        <td><input type="checkbox" name="raspored[{{ doktor.doktor_id }}][prva]" {% if doktor.smene['prva'] is defined %}checked{% endif %}></td>
+                        <td><input type="checkbox" name="raspored[{{ doktor.doktor_id }}][druga]" {% if doktor.smene['druga'] is defined %}checked{% endif %}></td>
+                        <td><input type="checkbox" name="raspored[{{ doktor.doktor_id }}][treca]" {% if doktor.smene['treca'] is defined %}checked{% endif %}></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br>
+            <input type="submit" name="sacuvaj_raspored" value="Sačuvaj raspored">
+        </form>
+    </div>
+</body>
+</html>

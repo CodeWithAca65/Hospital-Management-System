@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class='centrirano'>
+        <h1>Svi pregledi</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Pacijent</th>
+                    <th>Datum</th>
+                    <th>Vreme</th>
+                    <th>Status</th>
+                    <th>Informacije o pregledu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pregled in pregledi %}
+                <tr>
+                    <td>{{ pregled.Pacijent }} </td>
+                    <td>{{ pregled.datum }}</td>
+                    <td>{{ pregled.vreme }}</td>
+                    <td>{{ pregled.status }}</td>
+                    <td>{{ pregled.informacije_o_pregledu }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table><br><br>
+        <form action="rute.php" method="post">
+            <label for="izveziExcel">Klikom na dugme ispod preuzimate podatke za preglede sa statusom <b>PREGLEDAN</b> u tabelarnom formatu</label>
+            <input type="submit" name="izveziExcel" id="izveziExcel" value="Preuzmi podatke">
+        </form>
+    </div>
+</body>
+</html>

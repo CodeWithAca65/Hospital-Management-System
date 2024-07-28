@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class='centrirano'>
+        <h1>Zakazivanje pregleda</h1>
+        <form method="post" action="rute.php">
+            <label for="ime">Ime pacijenta:</label>
+            <input type="text" name="ime" id="ime" required>
+            <br>
+            <label for="prezime">Prezime pacijenta:</label>
+            <input type="text" name="prezime" id="prezime" required>
+            <br>
+            <label for="jmbg">JMBG pacijenta:</label>
+            <input type="text" name="jmbg" id="jmbg" required>
+            <br>
+            <label for="prezime">Kontakt pacijenta:</label>
+            <input type="text" name="kontakt" id="kontakt" required>
+            <br><br>
+            <label for="doktor">Doktor:</label>
+            <select name="doktor_id" id="doktor">
+                {% for doktor in doktori %}
+                    <option value="{{ doktor.doktor_id }}">{{ doktor.ime }} {{ doktor.prezime }} {{ doktor.specijalnost }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="datum">Datum:</label>
+            <input type="date" name="datum" id="datum" required>
+            <br>
+            <label for="vreme">Vreme:</label>
+            <input type="time" name="vreme" id="vreme" required>
+            <br>
+            <input type="submit" name="potvrdi_zakazani_pregled" value="Zakazi pregled">
+            <br><br>
+            <input type="submit" name="preuzmi_podatke_u_pdf" value="Preuzmi podatke o zakazivanju - PDF">
+        </form>
+    </div>
+</body>
+</html>

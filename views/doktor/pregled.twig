@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class='centrirano'>
+        <h1>Izvrši pregled</h1>
+        
+        <form method="post" action="rute.php?pregled={{ pregledId }}">
+            <label for="informacije">Izvestaj o pregledu pacijenta:</label><br>
+            <textarea id="informacije" name="izvestaj" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" name="sacuvaj_pregled" value="Izvrši pregled">
+        </form>
+    </div>
+</body>
+</html>

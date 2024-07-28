@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index_style.css">
+</head>
+<body>
+    <div class="centrirano">
+        <h1>Raspored rada doktora >>></h1>
+        <form action="rute.php" method="post">
+            <label for="prikaziRaspored">Klikom na dugme ispod imaćete uvid u raspored</label>
+            <input type="submit" name="prikaziRaspored" id="prikaziRaspored" value="Prikazi raspored">
+        </form>
+        <br>
+        <br>
+        <h1>Prijavi se >>></h1>
+        <form action="index.php?naredba=login" method="post">
+            <label for="korisnickoIme">Korisničko ime:</label>
+            <input type="text" name="korisnickoIme" id="korisnickoIme" required>
+
+            <label for="sifra">Lozinka:</label>
+            <input type="password" name="sifra" id="sifra" required>
+
+            <button type="submit">Potvrdi</button>
+        </form>
+    </div>
+</body>
+</html>

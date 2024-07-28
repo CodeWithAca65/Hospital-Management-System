@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class='centrirano'>
+        <h1>Nepregledani pregledi</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pacijent</th>
+                    <th>Datum</th>
+                    <th>Vreme</th>
+                    <th>Pregled</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, pregled in pregledi %}
+                <tr>
+                    <td>{{ imePrezimePacijenata[key] }}</td>
+                    <td>{{ pregled.datum }}</td>
+                    <td>{{ pregled.vreme }}</td>
+                    <td>
+                        <form action="rute.php?pregled={{ pregled.pregled_id }}" method="post">
+                            <input type="submit" name="izvrsi_pregled" value="Izvrsi pregled">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

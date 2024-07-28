@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/slika1.jpg');
+    background-size: cover;
+}
+
+/* Stilizacija tabele */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Stilizacija forme */
+form {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="date"], 
+input[type="time"], 
+input[type="number"], 
+textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4b4839;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #173319;
+}
+
+.centrirano {
+    background-color: rgba(69, 160, 110, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+h1, label {
+    color: white;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+button {
+    padding: 5px;
+    width: 100px;
+    font-size: 17px;
+}
